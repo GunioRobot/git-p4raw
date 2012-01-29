@@ -20,7 +20,7 @@ create table int_type (
     title text,
     description text
 );
-  
+
 -- some integration types which I have yet to fully decypher; however,
 -- I considered their variation relatively disinteresting historically
 -- as it is derivable.  So, these are for display and possible use as
@@ -170,7 +170,7 @@ create table label (
        tagname TEXT not null,
        depotpath TEXT not null,
        primary key (tagname, depotpath),
-       revision int NOT NULL       
+       revision int NOT NULL
 ) inherits (source_file);
 
 -- this table holds the marks that we send to git fast-import

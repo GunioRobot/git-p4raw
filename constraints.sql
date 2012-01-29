@@ -103,7 +103,7 @@ alter table change add constraint change_who_user_valid
 
 -- the 'integed' table is denormalised, with rows normally appearing
 -- in pairs.  However, these rows were missing their partners:
-select								      
+select
 	i1.change,
 	i1.subject || '#' || i1.subject_minrev || ',' || i1.subject_maxrev,
 	int_type.title,

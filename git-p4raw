@@ -268,7 +268,7 @@ SQL
 				();
 			}
 			elsif ( m{^journal.(\d+).gz} and
-				($max_checkpoint && $max_checkpoint > $1 
+				($max_checkpoint && $max_checkpoint > $1
 				or $max_journal && $max_journal >= $1
 				or $top_checkpoint && $top_checkpoint > $1)
 				and !$load_opts{all_interesting}
@@ -1997,7 +1997,7 @@ sub make_cc {  # only CC's eez tasting like theez
 		  obj_change => shift,
 		  obj_headrev => shift };
 
-	
+
 }
 
 sub diff_right {
@@ -4148,7 +4148,7 @@ SQL
 			$commit=$1;
 			@parents=split" ",$2 if $2;
 		}
-		elsif ( my ($depotpath, $change) = 
+		elsif ( my ($depotpath, $change) =
 			m{^\s*p4raw-id:\s*(\S*)@(\d+)} ) {
 			mutter "adding $depotpath\@$change (".substr($commit, 0, 12).")";
 			$DB::single = 1;
@@ -4409,26 +4409,26 @@ An example interactive session:
 
   maia:~/src/p4-rsync$ git-p4raw describe 17
   Change 17 by mbeattie@localhost on 1997/05/25 06:46:49
-  
+
           Wholesale update to 5.004.
-  
+
   On path //depot/relperl,
           add 291 file(s)
           delete 27 file(s)
           edit 392 file(s)
-  
+
   Parent: //depot/relperl@16
   maia:~/src/p4-rsync$ git-p4raw graft 17 16 perl-5.004
   maia:~/src/p4-rsync$ git-p4raw describe 17
   Change 17 by mbeattie@localhost on 1997/05/25 06:46:49
-  
+
           Wholesale update to 5.004.
-  
+
   On path //depot/relperl,
           add 291 file(s)
           delete 27 file(s)
           edit 392 file(s)
-  
+
   Parent: //depot/relperl@16 (manual)
   Parent: perl-5.004
   maia:~/src/p4-rsync$ git-p4raw export-commits -v 2..17
@@ -4801,34 +4801,34 @@ inserting some rows manually.
 
   maia:~/src/p4-rsync$ git-p4raw describe 3736
   Change 3736 by jhi@alpha on 1999/07/26 01:10:03
-  
+
           Populate metaconfig branch.
-  
+
   git-p4raw: warning: ignoring changes on path //depot/metaconfig/U/ebcdic@3736
   git-p4raw: warning: ignoring changes on path //depot/metaconfig/U/a_dvisory@3736
   git-p4raw: warning: ignoring changes on path //depot/metaconfig/U/acl@3736
   git-p4raw: warning: ignoring changes on path //depot/metaconfig/U/compline@3736
   On path //depot/metaconfig/U,
           add 353 file(s)
-  
+
   On path //depot/metaconfig/U.check,
           add 7 file(s)
-  
+
   On path //depot/metaconfig/dist-3.0at70,
           add 576 file(s)
-  
+
   On path //depot/metaconfig/dist-3.0at70b,
           add 633 file(s)
-  
+
   maia:~/src/p4-rsync$ psql
   Welcome to psql 8.2.4, the PostgreSQL interactive terminal.
-  
+
   Type:  \copyright for distribution terms
          \h for help with SQL commands
          \? for help with psql commands
          \g or terminate with semicolon to execute query
          \q to quit
-  
+
   pumpkin=# delete from change_parents
             where parent_branchpath like '//depot/metaconfig/%';
   DELETE 690 0
@@ -4843,13 +4843,13 @@ inserting some rows manually.
   pumpkin=# \q
   maia:~/src/p4-rsync$ git-p4raw describe 3736 -w
   Change 3736 by jhi@alpha on 1999/07/26 01:10:03
-  
+
           Populate metaconfig branch.
-  
+
   On path //depot/metaconfig,
           add 1569 file(s)
-  
-  maia:~/src/p4-rsync$ 
+
+  maia:~/src/p4-rsync$
 
 =head2 Replacing Perforce changes with previously crafted ones
 
